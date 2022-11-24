@@ -11,6 +11,8 @@ import insertionSort from './algorithms/insertionSort'
 import selectionSort from './algorithms/selectionSort'
 import mergeSort from './algorithms/mergeSort'
 import quickSort from './algorithms/quickSort'
+import heapSort from './algorithms/heapSort'
+
 
 function App() {
 	// Generating shuffled array of 1 to len
@@ -20,7 +22,7 @@ function App() {
 		setSortedIndex([])
 
 		const randomArray = Array.from(Array(len + 1).keys()).slice(1)
-		
+
 		for (let i = randomArray.length - 1; i > 0; i--) {
 			const randomIndex = Math.floor(Math.random() * (i - 1))
 			const temp = randomArray[i]
@@ -28,7 +30,7 @@ function App() {
 			randomArray[i] = randomArray[randomIndex]
 			randomArray[randomIndex] = temp
 		}
-		
+
 		setBlocks(randomArray)
 	}
 
@@ -65,7 +67,7 @@ function App() {
 
 	// Sorting according to the algorithm
 	const handleSort = () => {
-		
+
 		const sortAccOrder = (order) => {
 			(function loop(i) {
 				setTimeout(function () {
@@ -73,66 +75,68 @@ function App() {
 					setCompare([j, k])
 					setSwap([])
 
-					if(index !== null){
+					if (index !== null) {
 						setSortedIndex((prevState) => (
 							[...prevState, index]
 						))
 					}
-		
-					if(arr){
-						
+
+					if (arr) {
+
 						setBlocks(arr)
-						if(j !== null || k != null)
+						if (j !== null || k != null)
 							setSwap([j, k])
 
 					}
 
-					if (++i < order.length){
+					if (++i < order.length) {
 						loop(i)
 					} else {
 						setSorting(false)
 						setCompleted(true)
-					}   
+					}
 				}, speed)
 			})(0)
-			
+
 		}
 
 		setSorting(true)
 
-		algo === 'bubbleSort' ? sortAccOrder(bubbleSort(blocks)) : 
-		algo === 'insertionSort' ?  sortAccOrder(insertionSort(blocks)) :
-		algo === 'selectionSort' ? sortAccOrder(selectionSort(blocks)) :
-		algo === 'mergeSort' ? sortAccOrder(mergeSort(blocks)) : 
-		algo === 'quickSort' ? sortAccOrder(quickSort(blocks)) : (() => {
-			setSorting(false)
-			setCompleted(true)
-		})()
+		algo === 'bubbleSort' ? sortAccOrder(bubbleSort(blocks)) :
+			algo === 'insertionSort' ? sortAccOrder(insertionSort(blocks)) :
+				algo === 'selectionSort' ? sortAccOrder(selectionSort(blocks)) :
+					algo === 'mergeSort' ? sortAccOrder(mergeSort(blocks)) :
+						algo === 'quickSort' ? sortAccOrder(quickSort(blocks)) :
+							algo === 'heapSort' ? sortAccOrder(heapSort(blocks)) :
+								(() => {
+									setSorting(false)
+									setCompleted(true)
+								})()
 	}
 
 	return (
 		<div className="App">
-			<Navbar 
+			<Navbar
 				generateRandomArray={() => generateRandomArray(len)}
-				handleLength={handleLength} 
+				handleLength={handleLength}
 				handleSpeed={handleSpeed}
 				handleAlgo={handleAlgo}
-				handleSort={handleSort} 
+				handleSort={handleSort}
 				sorting={sorting}
 				completed={completed}
 				len={len}
 				speed={speed}
 				algo={algo}
 			/>
-			
-			<ListBlocks 
-				blocks={blocks} 
+
+			<ListBlocks
+				blocks={blocks}
 				compare={sorting && compare}
 				swap={sorting && swap}
-				sorted={sortedIndex} 
+				sorted={sortedIndex}
 			/>
 
-			<Legends algo={algo}/>
+			<Legends algo={algo} />
 		</div>
 	);
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import './Navbar.css'
 
-const Navbar = ({ handleLength, handleSpeed, handleAlgo, generateRandomArray, handleSort, sorting, completed, len, speed, algo }) =>{
+const Navbar = ({ handleLength, handleSpeed, handleAlgo, generateRandomArray, handleSort, sorting, completed, len, speed, algo }) => {
 
     return (
         <nav>
@@ -18,16 +18,17 @@ const Navbar = ({ handleLength, handleSpeed, handleAlgo, generateRandomArray, ha
                         <label>Length</label>
                         <input type='range' onChange={handleLength} min='5' max={100} step='1' disabled={sorting} value={len}></input>
                     </div>
-                    
+
                     <select onChange={handleAlgo} disabled={sorting} value={algo}>
                         <option value='bubbleSort'>Bubble Sort</option>
                         <option value='insertionSort'>Insertion Sort</option>
                         <option value='selectionSort'>Selection Sort</option>
                         <option value='mergeSort'>Merge Sort</option>
                         <option value='quickSort'>Quick Sort</option>
+                        <option value='heapSort'>Heap Sort</option>
                     </select>
                 </div>
-                
+
                 <div>
                     <button onClick={generateRandomArray} disabled={sorting}>Randomize</button>
                     <button onClick={handleSort} disabled={sorting || completed}>Sort</button>
