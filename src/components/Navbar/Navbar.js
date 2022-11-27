@@ -26,6 +26,7 @@ const Navbar = ({ handleLength, handleSpeed, handleAlgo, generateRandomArray, ha
                         <option value='mergeSort'>Merge Sort</option>
                         <option value='quickSort'>Quick Sort</option>
                         <option value='heapSort'>Heap Sort</option>
+                        <option value='countSort'>Count Sort</option>
                     </select>
                 </div>
 

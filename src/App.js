@@ -12,6 +12,7 @@ import selectionSort from './algorithms/selectionSort'
 import mergeSort from './algorithms/mergeSort'
 import quickSort from './algorithms/quickSort'
 import heapSort from './algorithms/heapSort'
+import countSort from './algorithms/countSort'
 
 
 function App() {
@@ -108,6 +109,7 @@ function App() {
 					algo === 'mergeSort' ? sortAccOrder(mergeSort(blocks)) :
 						algo === 'quickSort' ? sortAccOrder(quickSort(blocks)) :
 							algo === 'heapSort' ? sortAccOrder(heapSort(blocks)) :
+							algo === 'countSort' ? sortAccOrder(countSort(blocks)) :
 								(() => {
 									setSorting(false)
 									setCompleted(true)
