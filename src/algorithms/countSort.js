@@ -30,9 +30,6 @@ const countSort = (blocks) => {
     return order;
 };
 
-export default countSort
-
-
-// order.push([i, largest, null, null])                  // Compare
+export default countSort    
 
 

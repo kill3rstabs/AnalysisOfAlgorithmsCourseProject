@@ -20,7 +20,8 @@ const maxHeapify = (dupBlocks, n, i) => {
     order.push([i, largest, null, null])                  // Compare
     // If smallest is not root 
     if (largest !== i) {
-        order.push([i, largest, dupBlocks.slice(), null]) // Swap
+        order.push([i, largest, null, null])                  // Compare
+        // order.push([i, largest, dupBlocks.slice(), null]) // Swap
         let temp = dupBlocks[i];
         dupBlocks[i] = dupBlocks[largest];
         dupBlocks[largest] = temp;
@@ -30,7 +31,7 @@ const maxHeapify = (dupBlocks, n, i) => {
         maxHeapify(dupBlocks, n, largest);
 
     }
-    order.push([i, largest, dupBlocks.slice(), null]) // Swap
+    // order.push([i, largest, dupBlocks.slice(), null]) // Swap
 }
 
 // main function to do heap sort 

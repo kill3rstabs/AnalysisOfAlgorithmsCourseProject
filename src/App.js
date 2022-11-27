@@ -13,6 +13,7 @@ import mergeSort from './algorithms/mergeSort'
 import quickSort from './algorithms/quickSort'
 import heapSort from './algorithms/heapSort'
 import countSort from './algorithms/countSort'
+import radixSort from './algorithms/radixSort'
 
 
 function App() {
@@ -63,7 +64,7 @@ function App() {
 
 	// handling the speed of sorting
 	const handleSpeed = (event) => {
-		setSpeed(Math.ceil(400 / Number(event.target.value)))
+		setSpeed(Math.ceil(1200 / Number(event.target.value)))
 	}
 
 	// Sorting according to the algorithm
@@ -109,11 +110,12 @@ function App() {
 					algo === 'mergeSort' ? sortAccOrder(mergeSort(blocks)) :
 						algo === 'quickSort' ? sortAccOrder(quickSort(blocks)) :
 							algo === 'heapSort' ? sortAccOrder(heapSort(blocks)) :
-							algo === 'countSort' ? sortAccOrder(countSort(blocks)) :
-								(() => {
-									setSorting(false)
-									setCompleted(true)
-								})()
+								algo === 'countSort' ? sortAccOrder(countSort(blocks)) :
+									algo === 'radixSort' ? sortAccOrder(radixSort(blocks)) :
+										(() => {
+											setSorting(false)
+											setCompleted(true)
+										})()
 	}
 
 	return (

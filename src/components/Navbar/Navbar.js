@@ -11,7 +11,7 @@ const Navbar = ({ handleLength, handleSpeed, handleAlgo, generateRandomArray, ha
                 <div>
                     <div className='group speed'>
                         <label>Speed</label>
-                        <input type='range' onChange={handleSpeed} min='1' max='10' value={Math.ceil(400 / speed)} disabled={sorting}></input>
+                        <input type='range' onChange={handleSpeed} min='1' max='10' value={Math.ceil(1200 / speed)} disabled={sorting}></input>
                     </div>
 
                     <div className='group length'>
@@ -27,6 +27,7 @@ const Navbar = ({ handleLength, handleSpeed, handleAlgo, generateRandomArray, ha
                         <option value='quickSort'>Quick Sort</option>
                         <option value='heapSort'>Heap Sort</option>
                         <option value='countSort'>Count Sort</option>
+                        <option value='radixSort'>Radix Sort</option>
                     </select>
                 </div>
 
