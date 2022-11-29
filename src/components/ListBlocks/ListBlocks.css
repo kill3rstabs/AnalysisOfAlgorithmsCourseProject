@@ -6,8 +6,7 @@
 }
 
 .listBlocks > .block{
-    background-color: turquoise;
-    color: #282c34;
+    background-color: #ff8000;
     display: inline-block;
     font-size: 10px;
     font-weight: bold;
@@ -16,4 +15,7 @@
     transition-duration: 150ms;
     transition-property: height;
     transition-timing-function: ease-in;
+}
+body{
+    background-color: #33ff00;
 }

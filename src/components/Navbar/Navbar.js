@@ -5,7 +5,7 @@ const Navbar = ({ handleLength, handleSpeed, handleAlgo, generateRandomArray, ha
 
     return (
         <nav>
-            <div className='nav-brand'>Sorting Visualizer</div>
+            <div className='nav-brand'>Algo Project: Visualizing algorithms</div>
 
             <div className='toolbox'>
                 <div>
@@ -15,7 +15,7 @@ const Navbar = ({ handleLength, handleSpeed, handleAlgo, generateRandomArray, ha
                     </div>
 
                     <div className='group length'>
-                        <label>Length</label>
+                        <label>Length of array</label>
                         <input type='range' onChange={handleLength} min='5' max={100} step='1' disabled={sorting} value={len}></input>
                     </div>
 

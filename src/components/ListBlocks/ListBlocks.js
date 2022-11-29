@@ -20,7 +20,7 @@ function ListBlocks({ blocks, compare, sorted, swap }){
 
             {blocks.map((block, i) => {
                 const height = block * 500 / blocks.length;
-                let bg = 'turquoise'
+                let bg = '#ff8000'
 
                 // i th element is being compared with some other element
                 if(compare && (i === compare[0] || i === compare[1])){

@@ -1,6 +1,6 @@
 nav{
     align-items: center;
-    background-color: #292940;
+    background-color: #0e7821;
     box-shadow: 0px 2px 7px black;
     display: flex;
     justify-content: space-between;
@@ -10,7 +10,7 @@ nav{
 
 nav .nav-brand{
     color: white;
-    font-size: 2em;
+    font-size: 1.8em;
 }
 
 .toolbox{
@@ -31,7 +31,7 @@ nav .nav-brand{
 }
 
 .toolbox button{
-    background-color: #008dba;
+    background-color: #9dff00;
     border-radius: 5px;
     border: none;
     color: #f1f1f1;
@@ -53,7 +53,7 @@ nav .nav-brand{
 }
 
 .toolbox select {
-    background: #008dba;
+    background: #9dff00;
     border-radius: 5px;
     border: none;
     color: white;
