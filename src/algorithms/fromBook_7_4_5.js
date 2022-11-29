@@ -1,9 +1,13 @@
 let order = []
+let dupBlocks;
 const fromBook_7_4_5 = (blocks) => {
 
 
-    const dupBlocks = blocks.slice() // Copying blocks array
+    dupBlocks = blocks.slice() // Copying blocks array
     hybrid_quick_sort(dupBlocks, 0, dupBlocks.length - 1)
+    for (let i = 0; i < dupBlocks.length; i++) {
+        order.push([null, null, null, i])
+    }
     return order
 }
 
@@ -38,8 +42,9 @@ const partition = (dupBlocks, l, r) => {
 
 
 const hybrid_quick_sort = (dupBlocks, l, r) => {
+    console.log("In hybrid quick sort value of l and r is " + l + " " + r)
     while (l < r) {
-        if (r - l < 10) {
+        if (r - l + 1 < 10) {
             insertionSort_(dupBlocks, l, r);
             break
         }
@@ -59,33 +64,26 @@ const hybrid_quick_sort = (dupBlocks, l, r) => {
     return
 }
 
-const insertionSort_ = (blocks) => {
-    // const dupBlocks = blocks // copying blocks array
-
+const insertionSort_ = (blocks_, l, r) => {
+    console.log("In insertion sort value of l and r is " + l + " " + r)
     let i, j
 
-    for (i = 0; i < blocks.length; i++) {
+    for (i = l + 1; i < r + 1; i++) {
         j = i - 1
-        while (j >= 0 && blocks[j] > blocks[j + 1]) {
-            order.push([j, j + 1, blocks.slice(), null]) // Swap
-            swap(blocks, j, j + 1)
+        while (j >= 0 && dupBlocks[j] > dupBlocks[j + 1]) {
+            swap(dupBlocks, j, j + 1)
             order.push([j, j + 1, null, null])              // Compare
-            order.push([j, j + 1, blocks.slice(), null]) // Swap
+            order.push([j, j + 1, dupBlocks.slice(), null]) // Swap
             j -= 1
+
         }
     }
-
-    for (i = 0; i < blocks.length; i++) {
+    for (i = l; i < r + 1; i++) {
         order.push([null, null, null, i])
     }
-    return
 }
 
 
 export default fromBook_7_4_5
 
-// order.push([j, j + 1, null, null])                  // Compare
 
-// order.push([j, j + 1, dupBlocks.slice(), null]) // Swap
-
-// order.push([null, null, null, j]) // j-th element is in correct position ( Sorted )

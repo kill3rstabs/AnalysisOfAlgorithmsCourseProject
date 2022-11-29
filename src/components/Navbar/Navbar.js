@@ -29,6 +29,7 @@ const Navbar = ({ handleLength, handleSpeed, handleAlgo, generateRandomArray, ha
                         <option value='countSort'>Count Sort</option>
                         <option value='radixSort'>Radix Sort</option>
                         <option value='fromBook_7_4_5'>7.4.5 from book</option>
+                        <option value='fromBook_8_2_4'>8.2.4 from book</option>
                     </select>
                 </div>
 

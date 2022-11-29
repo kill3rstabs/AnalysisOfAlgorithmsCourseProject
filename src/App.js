@@ -15,6 +15,7 @@ import heapSort from './algorithms/heapSort'
 import countSort from './algorithms/countSort'
 import radixSort from './algorithms/radixSort'
 import fromBook_7_4_5 from './algorithms/fromBook_7_4_5'
+import fromBook_8_2_4 from './algorithms/fromBook_8_2_4'
 
 
 function App() {
@@ -114,6 +115,7 @@ function App() {
 								algo === 'countSort' ? sortAccOrder(countSort(blocks)) :
 									algo === 'radixSort' ? sortAccOrder(radixSort(blocks)) :
 										algo === 'fromBook_7_4_5' ? sortAccOrder(fromBook_7_4_5(blocks)) :
+										algo === 'fromBook_8_2_4' ? sortAccOrder(fromBook_8_2_4(blocks)) :
 											(() => {
 												setSorting(false)
 												setCompleted(true)
