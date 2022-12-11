@@ -1,27 +1,32 @@
-.legends{
+.legends {
     color: white;
+    /* box-shadow: 7px 7px 7px 7px black; */
     display: flex;
     font-size: 1.2em;
     justify-content: space-between;
-    margin: 50px auto;
-    max-width: 600px;
-    padding: 0 10px;
+    /* margin:  auto; */
+    max-width: 100%;
+    padding: 10px 250px;
+    background-color: #0e7821;
 }
 
-.key{
+.key {
     align-items: center;
+    background-color: #0e7821;
     display: flex;
 }
 
 
-.sq{
+.sq {
     display: inline-block;
+    background-color: #0e7821;
     height: 20px;
     margin: 0 10px;
     width: 20px;
 }
 
-.compare{
+.compare {
+    background-color: #0e7821;
     background-color: #ffff50;
 }
 
@@ -29,12 +34,12 @@
     background-color: red;
 }
 
-.sorted{
+.sorted {
     background-color: #4bc52e;
 }
 
-@media(max-width: 564px){
-    .legends{
+@media(max-width: 564px) {
+    .legends {
         font-size: 0.8em;
         text-align: center;
     }

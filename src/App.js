@@ -4,6 +4,7 @@ import './App.css'
 import Navbar from './components/Navbar/Navbar'
 import ListBlocks from './components/ListBlocks/ListBlocks'
 import Legends from './components/Legends/Legends'
+import ComplexityAnalyzer from './components/ComplexityAnalyzer/ComplexityAnalyzer'
 
 // Algorithms
 import bubbleSort from './algorithms/bubbleSort'
@@ -48,7 +49,6 @@ function App() {
 	const [compare, setCompare] = useState([])
 	const [swap, setSwap] = useState([])
 	const [sortedIndex, setSortedIndex] = useState([])
-
 	// Generating random array every time the length is changed by th user
 	useEffect(() => {
 		generateRandomArray(len)
@@ -115,13 +115,13 @@ function App() {
 								algo === 'countSort' ? sortAccOrder(countSort(blocks)) :
 									algo === 'radixSort' ? sortAccOrder(radixSort(blocks)) :
 										algo === 'fromBook_7_4_5' ? sortAccOrder(fromBook_7_4_5(blocks)) :
-										algo === 'fromBook_8_2_4' ? sortAccOrder(fromBook_8_2_4(blocks)) :
-											(() => {
-												setSorting(false)
-												setCompleted(true)
-											})()
-	}
+											algo === 'fromBook_8_2_4' ? sortAccOrder(fromBook_8_2_4(blocks)) :
+												(() => {
+													setSorting(false)
+													setCompleted(true)
+												})()
 
+	}
 	return (
 		<div className="App">
 			<Navbar
@@ -143,8 +143,9 @@ function App() {
 				swap={sorting && swap}
 				sorted={sortedIndex}
 			/>
-
+			<ComplexityAnalyzer />
 			<Legends algo={algo} />
+
 		</div>
 	);
 }
