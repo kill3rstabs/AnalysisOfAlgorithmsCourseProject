@@ -40,6 +40,7 @@ const radixSort = (blocks) => {
         }
         console.log(holder)
         order.push([null, null, holder.slice(), null]) // Swap
+        console.log(dupBlocks)
         // New order after each loop
         dupBlocks = [].concat(...digitBuckets)
     }
